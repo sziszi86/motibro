@@ -7,7 +7,7 @@
 ## Funkciók
 
 - Munkaidő bejegyzések létrehozása, szerkesztése, törlése.
-- Bejegyzések címkézése.
+- Bejegyzések címkézése, listázás.
 - Dátum szerinti szűrés napi, heti vagy havi nézetben.
 
 ## További információk
