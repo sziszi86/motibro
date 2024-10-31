@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Munkaidő Nyilvántartó</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gray-100">
+<div id="app" class="max-w-2xl mx-auto p-6 mt-10 bg-white shadow-lg rounded-lg">
+    <h1 class="text-3xl font-bold mb-6 text-gray-800">Munkaidő Nyilvántartó</h1>
+
+    <!-- Bejegyzés hozzáadása -->
+    <div id="entry-form" class="space-y-4">
+        <input type="date" id="date" class="input-field" required>
+        <input type="time" id="start-time" class="input-field" required>
+        <input type="time" id="end-time" class="input-field" required>
+        <input type="text" id="description" placeholder="Feladat leírása" class="input-field" required>
+        <input type="text" id="tag" placeholder="Címke (pl. projekt)" class="input-field">
+        <button id="save-entry" class="btn-primary">Mentés</button>
+    </div>
+
+    <!-- Nézet kiválasztása és szűrők -->
+    <div class="flex space-x-4 mb-4 mt-6">
+        <select id="view-selector" class="input-field" onchange="updateDateInput()">
+            <option value="daily">Napi nézet</option>
+            <option value="weekly">Heti nézet</option>
+            <option value="monthly">Havi nézet</option>
+        </select>
+        <input type="date" id="date-filter" class="input-field hidden">
+        <div id="month-filter-group" class="hidden space-x-2">
+            <select id="year-filter" class="input-field w-1/2"></select>
+            <select id="month-filter" class="input-field w-1/2">
+                <option value="0">Január</option>
+                <option value="1">Február</option>
+                <option value="2">Március</option>
+                <option value="3">Április</option>
+                <option value="4">Május</option>
+                <option value="5">Június</option>
+                <option value="6">Július</option>
+                <option value="7">Augusztus</option>
+                <option value="8">Szeptember</option>
+                <option value="9">Október</option>
+                <option value="10">November</option>
+                <option value="11">December</option>
+            </select>
+        </div>
+        <select id="tag-filter" class="input-field">
+            <option value="">Összes címke</option>
+        </select>
+    </div>
+    <button onclick="filterEntries()" class="btn-primary mb-4">Szűrés</button>
+
+    <!-- Bejegyzés listázása -->
+    <div id="entry-list" class="mt-8 space-y-4"></div>
+
+    <!-- Összegző diagram -->
+    <div class="mt-8">
+        <canvas id="summary-chart" width="400" height="200"></canvas>
+    </div>
+</div>
+
+<script src="./js/date-fns.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="./js/script.js"></script>
+</body>
+</html>

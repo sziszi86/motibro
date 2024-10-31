@@ -1,0 +1,38 @@
+.input-field {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #e5e7eb;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: all 0.2s;
+    margin-top: 8px;
+}
+
+.input-field:focus {
+    border-color: #3b82f6;
+    outline: none;
+}
+#month-filter{
+    margin-left: 0;
+}
+
+.btn-primary {
+    background-color: #3b82f6;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: background-color 0.2s;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    background-color: #2563eb;
+}
+
+.entry {
+    background: #f9fafb;
+    border: 1px solid #e5e7eb;
+    padding: 15px;
+    border-radius: 6px;
+}
